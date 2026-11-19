@@ -1,14 +1,14 @@
 
+import "dotenv/config";
 import { createClient } from "redis";
 
-const client = createClient({
-    username: "default",
-    password: "AmpJUpCEoumuHNoWntW3kLWlsglpOjeA",
-    socket: {
-        host: "stunning-cast-ship-79371.db.redis.io",
-        port: 14377
-    }
-});
+const redisUrl = process.env.REDIS_URL;
+
+if (!redisUrl) {
+    throw new Error("REDIS_URL is required");
+}
+
+const client = createClient({ url: redisUrl });
 
 client.on("error", (err) => {
     console.error("Redis Client Error:", err);
