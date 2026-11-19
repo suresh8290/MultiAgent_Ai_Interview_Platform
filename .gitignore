@@ -1,0 +1,24 @@
+# Environment variables and credentials
+.env
+.env.*
+!.env.example
+**/serviceAccountKey.json
+**/credentials*.json
+*.pem
+*.key
+*.p12
+*.pfx
+
+# Dependencies and generated output
+node_modules/
+dist/
+dist-ssr/
+coverage/
+*.log
+*.local
+
+# Local files and archives
+.DS_Store
+resume-service-backup.tar
+docker-inputs.txt
+project-structure.txt
